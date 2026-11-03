@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batelec Power Interruptions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-content">
+            <div class="logo">⚡ Batelec</div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Schedule</a>
+                <a href="#" class="nav-link">About</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Power Interruptions</h1>
+            <p class="hero-subtitle">Stay informed about scheduled maintenance in your area</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search-container">
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search barangay or area..."
+                    class="search-input"
+                >
+            </div>
+            <select id="sortSelect" class="sort-select">
+                <option value="date-asc">Soonest</option>
+                <option value="date-desc">Latest</option>
+                <option value="duration-desc">Longest</option>
+            </select>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="totalInterruptions">0</div>
+                    <div class="stat-label">Total Scheduled</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="upcomingCount">0</div>
+                    <div class="stat-label">This Week</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="interruptions-container">
+            <div id="interruptionsList" class="interruptions-list">
+                <!-- Cards will load here -->
+            </div>
+            <div id="noResults" class="no-results" style="display: none;">
+                <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <p>No interruptions found</p>
+                <p class="empty-subtitle">Try a different search term</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Batelec Power Interruptions • Batangas Electricity Company</p>
+        <p class="footer-date" id="lastUpdate">Last updated: today</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+      </html>
+      
